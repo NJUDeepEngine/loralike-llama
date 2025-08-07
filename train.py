@@ -190,6 +190,10 @@ def main():
     config.model_type = "loralike_llama"
     model = LoraLikeLlamaForCausalLM(config)
 
+    local_rank = int(os.environ.get("LOCAL_RANK", 0))
+    device = torch.device(f"cuda:{local_rank}")
+    model = model.to(device)
+
     # config = LlamaConfig.from_pretrained(model_path)
     # model = LlamaForCausalLM(config)
 

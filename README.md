@@ -6,6 +6,7 @@
     - Base Model
         - meta-llama/Llama-3.2-1B
     - `python train.py`
+    - `torchrun --nproc_per_node=NUM_GPUS_YOU_HAVE train.py`
 2. Evaluation
     - Use [lm-evaluate-harness](https://github.com/EleutherAI/lm-evaluation-harness.git)
     - Benchmark Datasets
