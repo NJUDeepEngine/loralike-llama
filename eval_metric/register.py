@@ -1,0 +1,8 @@
+from transformers.models.auto.configuration_auto import CONFIG_MAPPING, CONFIG_MAPPING_NAMES
+from transformers.models.auto.modeling_auto import MODEL_FOR_CAUSAL_LM_MAPPING
+
+from llama.configuration_llama_lp import LoraLikeLlamaConfig
+from llama.modeling_llama_lp import LoraLikeLlamaForCausalLM
+
+CONFIG_MAPPING.register("loralike_llama", LoraLikeLlamaConfig)
+MODEL_FOR_CAUSAL_LM_MAPPING.register(LoraLikeLlamaConfig, LoraLikeLlamaForCausalLM)
